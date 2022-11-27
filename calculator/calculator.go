@@ -4,7 +4,7 @@ import (
 	"log"
 	"sync"
 
-	"finHubPipeline/structs"
+	"finnhubPipeline/structs"
 
 	"database/sql"
 )

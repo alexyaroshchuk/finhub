@@ -3,7 +3,7 @@ package calculator
 import (
 	"testing"
 
-	"finHubPipeline/structs"
+	"finnhubPipeline/structs"
 )
 
 func TestMovingAverage(t *testing.T) {

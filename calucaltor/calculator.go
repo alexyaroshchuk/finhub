@@ -84,7 +84,7 @@ func (ma *MovingAverage) filledValues() []float64 {
 
 func (ma *MovingAverage) saveDataToPgSQL(avg float64, symbol string) {
 	sqlStatement := `
-			INSERT INTO logs (avg_value, symbols)
+			INSERT INTO logs (avg_value, symbol)
 			VALUES ($1, $2)`
 	_, err := ma.db.Exec(sqlStatement, avg, symbol)
 	if err != nil {

@@ -8,6 +8,8 @@ It turns out that our database will be updated with each new record received fro
 
 You can setup window size (WINDOW) variable in env.
 
+If you need to add new coins, just do it in ```.env``` file (example in ```.env_example```). Currently in works for ```"BINANCE:BTCUSDT,BINANCE:ETHUSDT,BINANCE:ADAUSDT"```
+
 ### Database:
 
 Struct of database:
@@ -26,12 +28,12 @@ You should set up variables in .env files (required variables presented in .env_
 
 ### Run app: 
 
-make run
+```make run```
 
 ### Run app after changes:
 
-make build
+```make build```
 
 ### Test app: 
 
-make test
+```make test```

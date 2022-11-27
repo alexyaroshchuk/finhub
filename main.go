@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 
 	"finHubPipeline/calculator"
 	"finHubPipeline/structs"
@@ -29,7 +30,7 @@ func main() {
 	}
 	defer w.Close()
 
-	symbols := []string{"BINANCE:BTCUSDT", "BINANCE:ETHUSDT", "BINANCE:ADAUSDT"}
+	symbols := strings.Split(os.Getenv("SYMBOLS"), ",")
 	for _, s := range symbols {
 		msg, _ := json.Marshal(map[string]interface{}{"type": "subscribe", "symbol": s})
 

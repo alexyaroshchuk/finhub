@@ -1,6 +1,6 @@
-# A data pipeline from a continuous stream of finhub
+# A data pipeline from a continuous stream of finnhub
 
-Every second you receive several values from FinHub and process them concurrently. For example, if in the first second you got the value `1, 2, 3, 4, 5` then the result of the work will be 3, if the window size is greater than `5`.
+Every second you receive several values from finnhub and process them concurrently. For example, if in the first second you got the value `1, 2, 3, 4, 5` then the result of the work will be 3, if the window size is greater than `5`.
 
 If the window size is `3`, then you will process the last `3` digits, that is `3,4,5`, respectively, the value `4` will be stored in the database. 
 

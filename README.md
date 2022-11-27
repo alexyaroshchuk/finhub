@@ -11,7 +11,8 @@ You can setup window size (WINDOW) variable in env.
 ### Database:
 
 Struct of database:
-id|avg_value|symbol|created_at
+```id|avg_value|symbol|created_at```
+
 Example:
 ```
 1|1215.65|BINANCE:ETHUSDT|2023-01-01 00:00:00.0000

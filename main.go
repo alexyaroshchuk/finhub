@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"finHubPipeline/calculator"
-	"finHubPipeline/structs"
+	"finnhubPipeline/calculator"
+	"finnhubPipeline/structs"
 
 	"github.com/gorilla/websocket"
 	"github.com/joho/godotenv"

@@ -1,4 +1,4 @@
-module finHubPipeline
+module finnhubPipeline
 
 go 1.16
 

@@ -8,7 +8,7 @@ import (
 	"os"
 	"strconv"
 
-	"finHubPipeline/calucaltor"
+	"finHubPipeline/calculator"
 	"finHubPipeline/structs"
 
 	"github.com/gorilla/websocket"
@@ -46,9 +46,9 @@ func main() {
 		log.Fatalf("Error get window, %v", err)
 	}
 
-	maBTC := calucaltor.New(intWindow, db)
-	maETH := calucaltor.New(intWindow, db)
-	maADA := calucaltor.New(intWindow, db)
+	maBTC := calculator.New(intWindow, db)
+	maETH := calculator.New(intWindow, db)
+	maADA := calculator.New(intWindow, db)
 
 	for {
 		err := w.ReadJSON(&msg)

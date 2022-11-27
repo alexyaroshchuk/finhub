@@ -46,9 +46,10 @@ func main() {
 		log.Fatalf("Error get window, %v", err)
 	}
 
-	maBTC := calculator.New(intWindow, db)
-	maETH := calculator.New(intWindow, db)
-	maADA := calculator.New(intWindow, db)
+	coinsMap := map[string]*calculator.MovingAverage{}
+	for _, v := range symbols {
+		coinsMap[v] = calculator.New(intWindow, db)
+	}
 
 	for {
 		err := w.ReadJSON(&msg)
@@ -56,17 +57,8 @@ func main() {
 			log.Fatalf("Error readJSON, %v", err)
 		}
 		for i := 0; i < len(msg.Data); i++ {
-			if msg.Data[i].S == "BINANCE:BTCUSDT" {
-				maBTC.CalculateData(msg.Data[i])
-				continue
-			}
-			if msg.Data[i].S == "BINANCE:ETHUSDT" {
-				maETH.CalculateData(msg.Data[i])
-				continue
-			}
-			if msg.Data[i].S == "BINANCE:ADAUSDT" {
-				maADA.CalculateData(msg.Data[i])
-				continue
+			if calc, ok := coinsMap[msg.Data[i].S]; ok {
+				calc.CalculateData(msg.Data[i])
 			}
 		}
 

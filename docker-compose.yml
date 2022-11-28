@@ -29,6 +29,18 @@ services:
     networks:
       - finhub
 
+  migrate:
+    image: migrate/migrate
+    networks:
+      - finhub
+    volumes:
+      - ./db/migration:/db/migration
+    command: [ "-path", "/db/migration", "-database",  "postgresql://test:password@finhub-postgres:5432/finhub?sslmode=disable", "up"]
+    depends_on:
+      - finhub-postgres
+    links:
+      - finhub-postgres
+
 volumes:
   api:
   database_postgres:
